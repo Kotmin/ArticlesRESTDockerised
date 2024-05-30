@@ -4,6 +4,12 @@
 
 The Article Management API is a FastAPI-based application for managing articles with details such as name, tags, dates, category, and more. The application is designed to demonstrate various database isolation levels using PostgreSQL in a microservices architecture.
 
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Kotmin/ArticlesRESTDockerised/article-management-api)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Kotmin/ArticlesRESTDockerised/article-management-api/blob/main/LICENSE)
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
