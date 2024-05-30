@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pydantic
+pyyaml
+psycopg2-binary
+sqlalchemy
