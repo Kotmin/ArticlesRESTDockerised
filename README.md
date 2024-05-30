@@ -79,6 +79,7 @@ Add the second user:
 ## API Endpoints
 
 Full documentation aviable also at "/docs" endpoint
+
 Create Article
 
     Endpoint: /articles/
