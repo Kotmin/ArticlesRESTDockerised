@@ -28,8 +28,8 @@ To get started with the Article Management API using Docker Compose, follow thes
 
   ```bash
 
-    git clone https://github.com/yourusername/article-management-api.git
-    cd article-management-api
+    git clone https://github.com/Kotmin/ArticlesRESTDockerized.git
+    cd ArticlesRESTDockerized
 ```
 Build and start the services:
 
