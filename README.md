@@ -48,7 +48,7 @@ Build and start the services:
 ### Turn service down (and db whipe)
 
 ```bash
-  docker-compose down -v
+  docker-compose down -V
 ```
 
 ## Manual User Addition
