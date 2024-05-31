@@ -71,21 +71,26 @@ def get_db():
 
 @app.post("/articles/", response_model=ArticleRead)
 def create_article(article: ArticleCreate, db: Session = Depends(get_db)):
-    db_article = Article(
-        name=article.name,
-        tags=",".join(article.tags),
-        creation_date=article.creation_date,
-        modification_date=article.modification_date,
-        publication_date=article.publication_date,
-        category=article.category,
-        content_path=article.content_path,
-        thumbnail=article.thumbnail,
-        subtitle=article.subtitle,
-    )
-    db.add(db_article)
-    db.commit()
-    db.refresh(db_article)
-    return db_article
+    try:
+        db_article = Article(
+            name=article.name,
+            tags=",".join(article.tags),
+            creation_date=article.creation_date,
+            modification_date=article.modification_date,
+            publication_date=article.publication_date,
+            category=article.category,
+            content_path=article.content_path,
+            thumbnail=article.thumbnail,
+            subtitle=article.subtitle,
+        )
+        db.add(db_article)
+        db.commit()
+        db.refresh(db_article)
+        return db_article
+    except Exception as e:
+        logger.error(f"Error creating article: {e}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 @app.get("/articles/", response_model=List[ArticleRead])
 def get_articles(db: Session = Depends(get_db)):

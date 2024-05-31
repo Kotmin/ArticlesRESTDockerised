@@ -35,7 +35,7 @@ Build and start the services:
 
 ```bash
 
-    docker-compose up --build
+    docker compose up --build
 ```
   This will start the PostgreSQL database and the FastAPI application.
 
