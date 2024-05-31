@@ -42,7 +42,7 @@ Build and start the services:
 ## Turn service down
 
 ```bash
-  docker-compose down
+  docker compose down
 ```
 
 
@@ -55,7 +55,7 @@ After starting the services, add the necessary users to the PostgreSQL database:
     
 ```bash
 
-docker-compose exec db psql -U user1 -d isolation_demo
+docker compose exec db psql -U user1 -d isolation_demo
 ```
 
 #### Alt
