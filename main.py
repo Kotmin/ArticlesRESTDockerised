@@ -12,11 +12,16 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.responses import FileResponse
 import os
 
+import logging
+
 # Database configuration
 DATABASE_URL = "postgresql://user1:password1@db:5432/isolation_demo"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
+
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="Article Management API",
@@ -86,6 +91,7 @@ def create_article(article: ArticleCreate, db: Session = Depends(get_db)):
         db.add(db_article)
         db.commit()
         db.refresh(db_article)
+        db_article.tags = db_article.tags.split(",")
         return db_article
     except Exception as e:
         logger.error(f"Error creating article: {e}")
