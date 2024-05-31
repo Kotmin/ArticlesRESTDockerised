@@ -39,17 +39,12 @@ Build and start the services:
 ```
   This will start the PostgreSQL database and the FastAPI application.
 
-## To turn down service
+## Turn service down
 
 ```bash
   docker-compose down
 ```
 
-### Turn service down (and db whipe)
-
-```bash
-  docker-compose down -V
-```
 
 ## Manual User Addition
 
